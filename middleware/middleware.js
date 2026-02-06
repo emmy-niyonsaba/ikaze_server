@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
- const User = require("../models/User")
- const UserCollege = require("../models/UserCollege")
+const User = require("../models/User")
+const UserCollege = require("../models/UserCollege")
+
 module.exports = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
@@ -23,8 +24,14 @@ module.exports = async (req, res, next) => {
 
     // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const uCollege =  await UserCollege.findByPk(decoded.userId)
-      req.user = {...decoded, collegeId:uCollege?.collegeId,id:decoded.userId}
+    
+    const uCollege = await UserCollege.findOne({ where: { userId: decoded.userId } });
+    
+    req.user = {
+      ...decoded,
+      collegeId: uCollege?.collegeId,
+      id: decoded.userId
+    }
     
     next(); // continue
 

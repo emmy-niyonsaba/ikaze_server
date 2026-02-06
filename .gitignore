@@ -1,0 +1,41 @@
+# Node modules
+/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Build output
+/dist/
+/build/
+
+# Sequelize generated files (if any migration or seed folders)
+*.sqlite
+*.sqlite3
+
+# Optional: coverage reports (if using testing)
+coverage/
+
+# Optional: npm package lock
+package-lock.json
+yarn.lock
+
+# Misc
+*.log

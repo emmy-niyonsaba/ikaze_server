@@ -1,0 +1,31 @@
+{
+  "name": "ikaze",
+  "version": "1.0.0",
+  "description": "Ikaze is a visitors management system",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest --runInBand",
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "seed": "node db/seedDatabase.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sequelize/mysql": "^7.0.0-alpha.47",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3",
+    "pg": "^8.16.3",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^6.3.3"
+  }
+}
